@@ -1,28 +1,31 @@
 <?php
 
-    class Bills{
-        public $bill = $_POST["water-bill"];
-        
-        public function __construct($bill){
-            $this->bill = $bill;
-        }
-        public function __destruct($bill){
-            $this->bill;
+class WaterBill {
+    private $bill;
+
+    public function __construct($bill) {
+        $this->bill = $bill;
+    }
+
+    public function calculateBill() {
+        if($this->bill<=20){
+            $this->bill = $this->bill * 35;
+        }elseif($this->bill<=49){
+            $this->bill = (20 * 35) + (($this->bill-20) * 40);
+        }elseif($this->bill<=100){
+            $this->bill =  (20 * 35) + (29 * 40) + (($this->bill-49)* 45);
+        }else{
+            $this->bill = (20 * 35) + (29 * 40) + (51 * 45) + (($this->bill-100) * 50);
         }
     }
-            
 
-            
-                if($bill<=20){
-                    $bill = $bill * 35;
-                }elseif($bill<=49){
-                    $bill = (20 * 35) + (($bill-20) * 40);
-                }elseif($bill<=100){
-                    $bill =  (20 * 35) + (29 * 40) + (($bill-49)* 45);
-                }else{
-                    $bill = (20 * 35) + (29 * 40) + (51 * 45) + (($bill-100) * 50);
-                }
-                
-            echo "<h3>This month's water bill is: <b>Ksh $bill <b><h3>";
+    public function displayBill() {
+        echo "<h3>This month's water bill is: <b>Ksh $this->bill <b><h3>";
+    }
+}
+
+$waterBill = new WaterBill($_POST["water-bill"]);
+$waterBill->calculateBill();
+$waterBill->displayBill();
 
 ?>  

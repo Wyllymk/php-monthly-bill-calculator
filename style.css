@@ -9,12 +9,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column wrap;
+    flex-flow: column;
 }
 
 .container{
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
@@ -41,6 +41,10 @@ body{
 .card:hover{
   cursor: pointer;
   background-color: rgb(9, 9, 102);
+}
+
+b{
+  color: #020485;
 }
 
 h4{

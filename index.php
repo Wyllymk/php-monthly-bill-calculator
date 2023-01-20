@@ -1,4 +1,3 @@
-<?php include "classes.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,11 +33,10 @@
                 <input type="number" id="water-bill" name="water-bill" placeholder="Enter your units here..">
                 <input type="submit" value="Submit">
             </form>
+            <?php include "classes.php";?>
         </div>
 
     </div>
-    <?php
-        $water_bill = new Bills("$_POST["water-bill"]")
-    ?>
+   
 </body>
 </html>
