@@ -4,20 +4,52 @@
 }
 
 body{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(5, 9, 51);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
+    flex-flow: column wrap;
 }
 
-h1{
+.container{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.content{
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  display: flex;
+  flex-flow: column;
+  border: 1px solid black;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: rgb(16, 16, 161);
+  border-radius: 5px;
+}
+.card:hover{
+  cursor: pointer;
+  background-color: rgb(9, 9, 102);
+}
+
+h4{
     text-align: center;
+    color: rgb(255, 255, 255);
 }
-b{
+/* b{
     color: #0400ff;
-}
+} */
 .form{
     height: 60%;
     display: flex;
@@ -29,7 +61,7 @@ b{
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 50px;
-    width: 100vh;
+    width: 50vw;
     border: 2px solid red;
 }
 form {
@@ -69,3 +101,29 @@ form {
   input[type=submit]:hover {
     background-color: #205723;
   }
+
+
+  @media only screen and (max-width: 600px) {
+    .content{
+      flex-flow: column wrap;
+    }
+
+    .card {
+        flex-flow: column wrap;
+        width: 80%;
+    }
+
+    .form{
+      width: 80%;
+    }
+
+    form{
+      width: ;
+    }
+
+    input[type=number] {
+        width: 80%;
+    }
+
+    input[type=submit] {
+        width:40%;
