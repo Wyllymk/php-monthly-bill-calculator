@@ -1,3 +1,4 @@
+<?php include "classes.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
 </head>
 <body>
     <div class="container">
+        <h1>PHP Monthly Bill Calculator</h1>
         <div class="content">
             <div class="card">
                 <h4>For: 0-20 units</h4>
@@ -28,16 +30,15 @@
             </div>
         </div>
         <div class="form">
-            <h1>Enter your monthly units here:</h1>
+            <h2>Enter your monthly units here:</h2>
             <form action="index.php" method="post">
                 <div class="inputs">
                     <input type="text" name="name" placeholder="Enter your name">
                     <input type="number" id="water-bill" name="water-bill" placeholder="Enter your units here..">
                 </div>
-                
                 <input type="submit" value="Submit">
             </form>
-            <?php include "classes.php";?>
+            <p><?php echo ($waterBill->displayBill()) ?></p>
         </div>
 
     </div>

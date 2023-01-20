@@ -22,12 +22,13 @@ class WaterBill {
     }
 
     public function displayBill() {
-        echo "<h3>$this->name, this month's water bill is: <b>Ksh $this->bill <b><h3>";
+        return "<h3>$this->name, this month's water bill is: <b>Ksh $this->bill <b><h3>";
     }
 }
 
+if (isset($_POST["water-bill"])) {
 $waterBill = new WaterBill($_POST["water-bill"], $_POST["name"]);
 $waterBill->calculateBill();
 $waterBill->displayBill();
-
+}
 ?>  

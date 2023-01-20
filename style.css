@@ -47,13 +47,21 @@ b{
   color: #020485;
 }
 
-h4{
+h1{
     text-align: center;
     color: rgb(255, 255, 255);
 }
-/* b{
-    color: #0400ff;
+
+/* h2{
+  text-align: center;
+  color: rgb(255, 255, 255);
 } */
+
+h4{
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
 .form{
     height: 60%;
     display: flex;
@@ -132,8 +140,13 @@ form {
     }
 
     input[type=number] {
-        width: 80%;
+        width: 30%;
     }
 
+    input[type=text] {
+      width: 30%;
+    }
     input[type=submit] {
         width:40%;
+    }
+  }
