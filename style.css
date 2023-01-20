@@ -80,7 +80,7 @@ form {
     background-color: #796060;
     width: 100%;
   }
-  input[type=number] {
+  input[type=number],  input[type=text]{
     width: 25%;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
@@ -90,6 +90,12 @@ form {
     border-radius: 4px;
   }
 
+  .inputs{
+    display: flex;
+    flex-flow: row;
+    gap: 10px;
+    justify-content: center;
+  }
 
   input[type=submit] {
     width: 30%;

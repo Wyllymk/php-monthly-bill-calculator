@@ -2,9 +2,11 @@
 
 class WaterBill {
     private $bill;
+    public $name;
 
-    public function __construct($bill) {
+    public function __construct($bill, $name) {
         $this->bill = $bill;
+        $this->name = $name;
     }
 
     public function calculateBill() {
@@ -20,11 +22,11 @@ class WaterBill {
     }
 
     public function displayBill() {
-        echo "<h3>This month's water bill is: <b>Ksh $this->bill <b><h3>";
+        echo "<h3>$this->name, this month's water bill is: <b>Ksh $this->bill <b><h3>";
     }
 }
 
-$waterBill = new WaterBill($_POST["water-bill"]);
+$waterBill = new WaterBill($_POST["water-bill"], $_POST["name"]);
 $waterBill->calculateBill();
 $waterBill->displayBill();
 

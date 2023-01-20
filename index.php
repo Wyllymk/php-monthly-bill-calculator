@@ -30,7 +30,11 @@
         <div class="form">
             <h1>Enter your monthly units here:</h1>
             <form action="index.php" method="post">
-                <input type="number" id="water-bill" name="water-bill" placeholder="Enter your units here..">
+                <div class="inputs">
+                    <input type="text" name="name" placeholder="Enter your name">
+                    <input type="number" id="water-bill" name="water-bill" placeholder="Enter your units here..">
+                </div>
+                
                 <input type="submit" value="Submit">
             </form>
             <?php include "classes.php";?>
