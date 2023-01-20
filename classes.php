@@ -2,7 +2,7 @@
 
 class WaterBill {
     private $bill;
-    public $name;
+    private $name;
 
     public function __construct($bill, $name) {
         $this->bill = $bill;
@@ -26,9 +26,14 @@ class WaterBill {
     }
 }
 
-if (isset($_POST["water-bill"])) {
-$waterBill = new WaterBill($_POST["water-bill"], $_POST["name"]);
-$waterBill->calculateBill();
-$waterBill->displayBill();
+if (isset($_POST["water-bill"]) && isset($_POST["name"])) {
+    if(!empty($_POST["water-bill"]) && !empty($_POST["name"])){
+        $waterBill = new WaterBill($_POST["water-bill"], $_POST["name"]);
+        $waterBill->calculateBill();
+        $waterBill->displayBill();
+    }
+    }else{
+        echo "Please fill in both name and monthly units";
 }
+
 ?>  

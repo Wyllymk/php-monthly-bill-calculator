@@ -30,15 +30,16 @@
             </div>
         </div>
         <div class="form">
+            <p class="error"><?php if(isset($_POST["water-bill"]) && (!$_POST["water-bill"] || !$_POST["name"])) echo "Please fill in both name and monthly units!" ?></p>
             <h2>Enter your monthly units here:</h2>
-            <form action="index.php" method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <div class="inputs">
                     <input type="text" name="name" placeholder="Enter your name">
                     <input type="number" id="water-bill" name="water-bill" placeholder="Enter your units here..">
                 </div>
                 <input type="submit" value="Submit">
             </form>
-            <p><?php echo ($waterBill->displayBill()) ?></p>
+            <p class="message"><?php echo $waterBill->displayBill();  ?></p>
         </div>
 
     </div>
